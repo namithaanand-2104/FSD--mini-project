@@ -1,0 +1,12 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='reports_index'),
+    path('create_experiment/', views.create_experiment, name='create_experiment'),
+    path('list_experiments/', views.list_experiments, name='list_experiments'),
+    path('add_data_entry/<int:experiment_id>/', views.add_data_entry, name='add_data_entry'),
+    path('create_template/', views.create_template, name='create_template'),
+    path('list_templates/', views.list_templates, name='list_templates'),
+    path('generate_report/<int:experiment_id>/<int:template_id>/', views.generate_report, name='generate_report'),
+]
